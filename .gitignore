@@ -1,0 +1,23 @@
+# NEVER commit these
+config.properties
+*.key
+*.env
+*.db
+
+# Build output
+target/
+*.class
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.settings/
+
+# Logs
+*.log
+
+node_modules/
+frontend/node_modules/
+backend/target/
+ 
