@@ -18,12 +18,12 @@ package com.medsim.model;
 public class EvaluationReport {
 
     // ── Scores ────────────────────────────────────────────────────────────
-    private double scoreHistoryTaking;    // max 25
-    private double scorePhysicalExam;     // max 20
-    private double scoreInvestigation;    // max 20
-    private double scoreDiagnosis;        // max 20
-    private double scorePrescription;     // max 15
-    private double totalScore;            // max 100
+    private double scoreHistoryTaking;     
+    private double scorePhysicalExam;      
+    private double scoreInvestigation;     
+    private double scoreDiagnosis;         
+    private double scorePrescription;      
+    private double totalScore;             
 
     // ── Grade ─────────────────────────────────────────────────────────────
     private String grade;  // "A", "B", "C", "D", "F"
