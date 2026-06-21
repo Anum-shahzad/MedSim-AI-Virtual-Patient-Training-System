@@ -56,6 +56,7 @@ public class DatabaseHandler {
     }
 
      
+    
     public synchronized Connection getConnection() {
         try {
             if (connection == null || !connection.isValid(5)) {
@@ -71,6 +72,7 @@ public class DatabaseHandler {
         }
         return connection;
     }
+
 
     public synchronized void close() {
         try {
