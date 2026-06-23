@@ -19,6 +19,7 @@ public class StudentDAO {
 
     private final DatabaseHandler dbHandler;
 
+    
     public StudentDAO() {
         this.dbHandler = DatabaseHandler.getInstance();
     }
