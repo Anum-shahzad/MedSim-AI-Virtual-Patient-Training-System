@@ -17,6 +17,7 @@ public class SessionTokenDAO {
     private final DatabaseHandler dbHandler;
     private final StudentDAO studentDAO;
 
+    
     public SessionTokenDAO() {
         this.dbHandler  = DatabaseHandler.getInstance();
         this.studentDAO = new StudentDAO();
