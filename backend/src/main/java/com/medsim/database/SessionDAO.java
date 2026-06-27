@@ -127,6 +127,7 @@ public class SessionDAO {
         }
     }
 
+    
     // ── Save evaluation report ────────────────────────────────────────────
     public void saveEvaluation(int caseId, double historyScore, double examScore,
                                double investigationScore, double diagnosisScore,
