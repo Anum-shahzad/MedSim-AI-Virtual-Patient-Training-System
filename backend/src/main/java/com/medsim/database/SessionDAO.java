@@ -47,6 +47,7 @@ public class SessionDAO {
         public String patientCharacter() { return patientCharacter; }
     }
 
+    
     // ── Create a new case (session) ───────────────────────────────────────
     public int createCase(int studentDbId, String patientCharacter, String ageGroup, String department) {
         String sql = "INSERT INTO cases (student_id, patient_character, patient_age_group, department) VALUES (?, ?, ?, ?)";
