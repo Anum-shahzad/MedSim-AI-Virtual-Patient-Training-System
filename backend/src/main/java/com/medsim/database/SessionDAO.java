@@ -135,12 +135,13 @@ public class SessionDAO {
                                String grade, String aiFeedback, String modelAnswer,
                                String correctActionsJson, String missedActionsJson) {
 
-                                
+
         String sql = "INSERT INTO evaluation_reports (case_id, score_history_taking, score_physical_exam, " +
                      "score_investigation, score_diagnosis, score_prescription, total_score, grade, " +
                      "ai_feedback, model_answer, correct_actions, missed_actions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String updateStatus = "UPDATE cases SET status = 'Evaluated' WHERE id = ?";
 
+        
         Connection conn = dbHandler.getConnection();
         try {
             conn.setAutoCommit(false);
