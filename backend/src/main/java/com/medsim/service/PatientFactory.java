@@ -32,6 +32,8 @@ public class PatientFactory {
      * @return the fully configured Patient object ready for a session
      * @throws IllegalArgumentException if the character name is not recognized
      */
+
+    
     public static Patient create(String characterName) {
         return switch (characterName) {
 
