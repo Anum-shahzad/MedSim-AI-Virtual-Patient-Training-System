@@ -33,10 +33,11 @@ public class PatientFactory {
      * @throws IllegalArgumentException if the character name is not recognized
      */
 
-    
+
     public static Patient create(String characterName) {
         return switch (characterName) {
 
+            
             case "Saba Parveen" -> new AdultPatient(
                 "Saba Parveen",
                 "Anxious & Overthinking",
