@@ -31,6 +31,7 @@ public class DrugInteractionChecker {
         private final String severity;   // "HIGH" or "MODERATE"
         private final String reason;     // Clinical explanation
 
+        
         public InteractionWarning(String drug1, String drug2, String severity, String reason) {
             this.drug1    = drug1;
             this.drug2    = drug2;
