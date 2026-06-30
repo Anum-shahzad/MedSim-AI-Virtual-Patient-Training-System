@@ -59,6 +59,7 @@ public class AIService {
             throw new RuntimeException("[AIService] Session not initialized. Call initSession() first.");
         }
 
+
         
         JsonObject userMessage = new JsonObject();
         userMessage.addProperty("role", "user");
