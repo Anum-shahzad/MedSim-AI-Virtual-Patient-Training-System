@@ -53,12 +53,13 @@ public class AIService {
         System.out.println("[AIService] Session initialized for patient: " + patient.getCharacterName());
     }
 
-    
+
     public String sendMessage(String studentMessage) {
         if (conversationHistory.isEmpty()) {
             throw new RuntimeException("[AIService] Session not initialized. Call initSession() first.");
         }
 
+        
         JsonObject userMessage = new JsonObject();
         userMessage.addProperty("role", "user");
         userMessage.addProperty("content", studentMessage);
