@@ -86,7 +86,7 @@ public class EvaluatorService {
         return parseEvaluationResponse(responseJson, caseId);
     }
 
-    
+
     // ── Private: Build the evaluation prompt ──────────────────────────────
 
     private String buildEvaluationPrompt(
@@ -95,6 +95,7 @@ public class EvaluatorService {
             String primaryDx, String differentialDx,
             String prescription, String counselling) {
 
+                
         return """
             You are a strict medical education evaluator. A medical student has just completed a virtual patient consultation.
             Evaluate their performance STRICTLY based on what they actually did. Do not give marks for things they did not do.
