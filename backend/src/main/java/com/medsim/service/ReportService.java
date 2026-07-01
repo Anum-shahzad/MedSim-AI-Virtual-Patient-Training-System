@@ -20,6 +20,7 @@ import java.time.Duration;
  */
 public class ReportService {
 
+    
     private final HttpClient httpClient;
     private final Gson gson;
     private final String apiKey;
