@@ -34,6 +34,7 @@ public class EvaluatorService {
     private final String apiUrl;
     private final String model;
 
+
     public EvaluatorService() {
         this.httpClient = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(10))
@@ -85,6 +86,7 @@ public class EvaluatorService {
         return parseEvaluationResponse(responseJson, caseId);
     }
 
+    
     // ── Private: Build the evaluation prompt ──────────────────────────────
 
     private String buildEvaluationPrompt(
