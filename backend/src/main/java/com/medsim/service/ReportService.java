@@ -19,13 +19,13 @@ import java.time.Duration;
  * instead of a generic one-size-fits-all result.
  */
 public class ReportService {
-
     
     private final HttpClient httpClient;
     private final Gson gson;
     private final String apiKey;
     private final String apiUrl;
     private final String model;
+
 
     public ReportService() {
         this.httpClient = HttpClient.newBuilder()
