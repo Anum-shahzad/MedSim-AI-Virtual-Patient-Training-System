@@ -26,7 +26,6 @@ import java.time.format.DateTimeFormatter;
  */
 public class PDFExporter {
 
-
     // Brand colors
     private static final DeviceRgb COLOR_PRIMARY    = new DeviceRgb(30, 90, 160);   // Deep blue
     private static final DeviceRgb COLOR_PASS       = new DeviceRgb(39, 174, 96);   // Green
@@ -34,7 +33,6 @@ public class PDFExporter {
     private static final DeviceRgb COLOR_LIGHT_GREY = new DeviceRgb(245, 245, 245);
     private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("dd MMM yyyy, HH:mm");
 
-    
     /**
      * Exports an evaluation report to a PDF file.
      *
