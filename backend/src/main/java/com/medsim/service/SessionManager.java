@@ -35,12 +35,13 @@ public class SessionManager {
 
     // ── 1. START SESSION ──────────────────────────────────────────────────
 
-    
+
     public Session startSession(Student student, String characterName, String department) {
         activePatient = PatientFactory.create(characterName);
         activePatient.setDepartment(department);
         activeStudent = student;
 
+        
         // Convert the full age label to a MySQL ENUM-safe value
         String ageGroupEnum = toAgeGroupEnum(activePatient.getAgeGroupLabel());
 
