@@ -26,7 +26,6 @@ public class ReportService {
     private final String apiUrl;
     private final String model;
 
-
     public ReportService() {
         this.httpClient = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(10))
