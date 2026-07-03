@@ -32,9 +32,10 @@ public class SessionManager {
         this.gson             = new Gson();
     }
 
-    
+
     // ── 1. START SESSION ──────────────────────────────────────────────────
 
+    
     public Session startSession(Student student, String characterName, String department) {
         activePatient = PatientFactory.create(characterName);
         activePatient.setDepartment(department);
