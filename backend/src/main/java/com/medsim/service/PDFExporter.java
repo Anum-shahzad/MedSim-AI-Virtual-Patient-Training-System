@@ -26,6 +26,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class PDFExporter {
 
+    
     // Brand colors
     private static final DeviceRgb COLOR_PRIMARY    = new DeviceRgb(30, 90, 160);   // Deep blue
     private static final DeviceRgb COLOR_PASS       = new DeviceRgb(39, 174, 96);   // Green
