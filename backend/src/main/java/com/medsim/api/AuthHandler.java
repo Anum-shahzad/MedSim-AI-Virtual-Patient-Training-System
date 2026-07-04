@@ -30,6 +30,7 @@ public class AuthHandler {
         this.gson       = new Gson();
     }
 
+    
     // ── POST /api/auth/login ──────────────────────────────────────────────
     /**
      * Authenticates a student.
