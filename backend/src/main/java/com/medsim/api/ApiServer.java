@@ -16,7 +16,6 @@ public class ApiServer {
             config.bundledPlugins.enableDevLogging();
         });
 
-        
         // ── Manual CORS — handles ALL preflight OPTIONS requests ──────────
         app.before(ctx -> {
             ctx.header("Access-Control-Allow-Origin",  "*");
