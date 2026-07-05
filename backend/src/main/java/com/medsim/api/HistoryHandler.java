@@ -28,6 +28,7 @@ public class HistoryHandler {
     private final PDFExporter pdfExporter;
     private final Gson gson;
 
+    
     public HistoryHandler() {
         this.authHandler  = new AuthHandler();
         this.sessionDAO   = new SessionDAO();
