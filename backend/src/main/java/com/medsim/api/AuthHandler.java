@@ -57,6 +57,7 @@ public class AuthHandler {
             return;
         }
 
+        
         StudentDAO.AuthResult result = studentDAO.authenticate(studentId, password);
 
         switch (result) {
