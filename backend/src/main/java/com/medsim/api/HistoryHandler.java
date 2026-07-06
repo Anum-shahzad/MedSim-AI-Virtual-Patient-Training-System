@@ -11,7 +11,6 @@ import com.medsim.service.PDFExporter;
 import io.javalin.http.Context;
 
 import java.util.List;
-
 /**
  * HistoryHandler — Handles past session history, leaderboard, and PDF export.
  *
@@ -28,7 +27,6 @@ public class HistoryHandler {
     private final PDFExporter pdfExporter;
     private final Gson gson;
 
-    
     public HistoryHandler() {
         this.authHandler  = new AuthHandler();
         this.sessionDAO   = new SessionDAO();
