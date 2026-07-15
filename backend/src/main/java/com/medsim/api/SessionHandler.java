@@ -19,8 +19,6 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  */
 
-
-
 public class SessionHandler {
 
     // Static + ConcurrentHashMap = survives all requests, thread-safe
