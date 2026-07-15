@@ -19,7 +19,6 @@ public class StudentDAO {
 
     private final DatabaseHandler dbHandler;
 
-    
     public StudentDAO() {
         this.dbHandler = DatabaseHandler.getInstance();
     }
@@ -28,11 +27,9 @@ public class StudentDAO {
     public boolean register(Student student, String plainPassword) {
         String sql = "INSERT INTO students (student_id, full_name, university_name, year_of_study, language_pref, password_hash) VALUES (?, ?, ?, ?, ?, ?)";
 
-
         int saltRounds = AppConfig.getInt("security.bcrypt.rounds");
         String hashedPassword = BCrypt.hashpw(plainPassword, BCrypt.gensalt(saltRounds));
-
-        
+ 
         try (PreparedStatement stmt = dbHandler.getConnection().prepareStatement(sql)) {
             stmt.setString(1, student.getStudentId());
             stmt.setString(2, student.getFullName());
