@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import com.medsim.model.EvaluationReport;
 import com.medsim.model.Patient;
 import com.medsim.util.AppConfig;
-
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -33,7 +32,6 @@ public class EvaluatorService {
     private final String apiKey;
     private final String apiUrl;
     private final String model;
-
 
     public EvaluatorService() {
         this.httpClient = HttpClient.newBuilder()
@@ -95,12 +93,10 @@ public class EvaluatorService {
             String primaryDx, String differentialDx,
             String prescription, String counselling) {
 
-
         return """
             You are a strict medical education evaluator. A medical student has just completed a virtual patient consultation.
             Evaluate their performance STRICTLY based on what they actually did. Do not give marks for things they did not do.
-            
-            
+              
             === PATIENT INFORMATION ===
             Patient Name: %s
             Patient Type: %s
