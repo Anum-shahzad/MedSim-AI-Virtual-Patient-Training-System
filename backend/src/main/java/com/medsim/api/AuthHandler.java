@@ -6,7 +6,6 @@ import com.medsim.database.SessionTokenDAO;
 import com.medsim.database.StudentDAO;
 import com.medsim.model.Student;
 import io.javalin.http.Context;
-
 import java.util.Optional;
 
 /**
