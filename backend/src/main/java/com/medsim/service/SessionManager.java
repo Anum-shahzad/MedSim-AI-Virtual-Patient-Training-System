@@ -3,7 +3,6 @@ package com.medsim.service;
 import com.google.gson.Gson;
 import com.medsim.database.SessionDAO;
 import com.medsim.model.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
