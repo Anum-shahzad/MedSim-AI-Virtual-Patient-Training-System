@@ -11,7 +11,6 @@ import { useEffect, useRef, useCallback } from 'react';
  *   - Subtle breathing (scale pulse)
  */
 
-
 const CHARACTER_CONFIG = {
   'Hamza_Noor': {
     file: '/characters/Hamza.svg',
