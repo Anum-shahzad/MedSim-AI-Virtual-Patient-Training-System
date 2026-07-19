@@ -4,7 +4,6 @@
  *  UI component for recording voice input and transcribing it to text using the Web Speech API.
  */
 
-
 import { useEffect, useRef } from 'react';
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
 
