@@ -16,6 +16,7 @@ const DEPARTMENTS = [
   { name:'Orthopedics',      icon:'🦴' },
 ];
 
+
 const CHARACTERS = [
   { name:'Saba Parveen',  type:'Anxious & Overthinking',    age:'Young Adult', emoji:'😰', color:'#EC4899' },
   { name:'Hamza Noor',    type:'Practical & Direct',         age:'Adult',       emoji:'🧑', color:'#3B82F6' },
