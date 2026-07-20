@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+
 const YEARS = [1,2,3,4,5,6];
 
 export default function SignupPage() {
