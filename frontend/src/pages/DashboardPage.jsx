@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { historyAPI } from '../api/client';
 
+
 const NAV_ITEMS = [
   { icon:'🏠', label:'Dashboard', path:'/dashboard' },
   { icon:'📋', label:'History',   path:'/history' },
