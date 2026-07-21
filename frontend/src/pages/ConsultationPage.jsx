@@ -5,6 +5,7 @@ import { useSession } from '../context/SessionContext';
 import PatientCharacter from '../components/PatientCharacter';
 
 
+
 // ── Browser TTS — replaces ElevenLabs ──────────────────────────────────────
 // speakPatientReply uses the built-in Web Speech API (works natively in Electron).
 // stopSpeech cancels playback when navigating away.
