@@ -13,6 +13,7 @@ import VoiceRecorder from '../components/VoiceRecorder';
 // All images served from /public/medical/ folder in the React project
 const M = (dept, file) => `/medical/${dept}/${file}`;
 
+
 const DEPT_EXAMS = {
   'General Medicine': [
     { name:'Abdomen Exam',      img: M('General Medicine','Abdomin.jpg'),      label:'Abdominal Examination',      desc:'Inspect and palpate all 9 quadrants. Note tenderness, guarding, rigidity or organomegaly.' },
