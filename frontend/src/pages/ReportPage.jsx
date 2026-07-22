@@ -9,6 +9,7 @@ const DIMS = [
   { key:'scorePrescription',  label:'Prescription Quality', max:15, icon:'💊' },
 ];
 
+
 export default function ReportPage() {
   const { report, session } = useSession();
   const navigate = useNavigate();
