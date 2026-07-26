@@ -7,6 +7,7 @@
 import { useEffect, useRef } from 'react';
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
 
+
 const BAR_COUNT = 20;
 
 // Bell-curve height profile: edges are short, centre bars are tall
