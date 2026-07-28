@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { historyAPI, sessionAPI } from '../api/client';
 import { useSession } from '../context/SessionContext';
 
+
 export default function HistoryPage() {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
