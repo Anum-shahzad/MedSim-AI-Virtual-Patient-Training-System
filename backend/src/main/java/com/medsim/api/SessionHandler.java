@@ -7,7 +7,6 @@ import com.medsim.model.*;
 import com.medsim.service.DrugInteractionChecker;
 import com.medsim.service.SessionManager;
 import io.javalin.http.Context;
-
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
