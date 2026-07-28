@@ -13,7 +13,6 @@ import com.itextpdf.layout.properties.UnitValue;
 import com.medsim.model.EvaluationReport;
 import com.medsim.model.Session;
 import com.medsim.model.Student;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
