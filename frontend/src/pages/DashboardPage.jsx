@@ -26,6 +26,7 @@ export default function DashboardPage() {
     : '—';
   const passRate = history.filter(h => (h.totalScore||0) >= 70).length;
 
+  
   return (
     <div style={styles.shell}>
       {/* Sidebar */}
