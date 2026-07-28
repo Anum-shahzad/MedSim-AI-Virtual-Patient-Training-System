@@ -2,6 +2,7 @@ package com.medsim.api;
 
 import io.javalin.Javalin;
 
+
 /**
  * ApiServer — Starts the Javalin HTTP server and registers all API routes.
  * CORS is handled manually via before/after filters — bypasses Javalin's
