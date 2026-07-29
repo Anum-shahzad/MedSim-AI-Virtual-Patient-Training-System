@@ -35,6 +35,8 @@ public class SessionTokenDAO {
 
         String sql = "INSERT INTO session_tokens (student_id, token, expires_at) VALUES (?, ?, ?)";
 
+
+        
         try (PreparedStatement stmt = dbHandler.getConnection().prepareStatement(sql)) {
             stmt.setInt(1, studentDbId);
             stmt.setString(2, token);
@@ -79,6 +81,7 @@ public class SessionTokenDAO {
     public void invalidateToken(String token) {
         String sql = "UPDATE session_tokens SET is_active = FALSE WHERE token = ?";
 
+        
         try (PreparedStatement stmt = dbHandler.getConnection().prepareStatement(sql)) {
             stmt.setString(1, token);
             stmt.executeUpdate();

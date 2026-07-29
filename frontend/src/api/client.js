@@ -28,7 +28,6 @@ api.interceptors.response.use(
   }
 );
 
-
 // ── Auth ──────────────────────────────────────────────────────────────────
 export const authAPI = {
   login:  (studentId, password)  => api.post('/api/auth/login',  { studentId, password }),
