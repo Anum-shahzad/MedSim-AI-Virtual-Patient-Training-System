@@ -4,6 +4,7 @@
  * React hook that wraps speechRecognitionService into a clean, stateful API
  * for use inside React components.
  *
+ * 
  * Exposes:
  *   - isSupported    — whether the browser supports speech recognition
  *   - isRecording    — true while the mic is active
