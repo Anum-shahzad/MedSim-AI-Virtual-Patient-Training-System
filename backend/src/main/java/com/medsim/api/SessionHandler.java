@@ -9,7 +9,6 @@ import com.medsim.service.SessionManager;
 import io.javalin.http.Context;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * SessionHandler — Handles all consultation session HTTP requests.
  *
