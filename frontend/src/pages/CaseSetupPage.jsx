@@ -22,7 +22,7 @@ const CHARACTERS = [
   { name:'Fatima Begum',  type:'Traditional & Resistive',      age:'Senior',           color:'#92400E', svg: '/Casesetupcharacters/Fatima.svg'    },
   { name:'Anas',          type:'Overconfident Self-Diagnoser', age:'Young Adult',      color:'#F59E0B', svg: '/Casesetupcharacters/Anas.svg'      },
   { name:'Erum',          type:'Quiet & Reserved',             age:'Teen/Young Adult', color:'#8B5CF6', svg: '/Casesetupcharacters/Erum.svg'      },
-  { name:'Shahreyar',     type:'Curious & Nervous',            age:'Child (7–12)',     color:'#10B981', svg: '/Casesetupcharacters/Shahreyar.svg' },
+  { name:'Shahreyar',     type:'Curious & Nervous',            age:'Child (7–12)',     color:'#10B981', svg: '/Casesetupcharacters/Shahreyar.svg', bgSize: '60%' },
   { name:'Anum Shahzad',  type:'Cooperative & Curious',        age:'Adult',            color:'#6366F1', svg: '/Casesetupcharacters/Anum.svg'      },
 ];
 
@@ -51,12 +51,10 @@ export default function CaseSetupPage() {
   return (
     <div style={styles.page}>
       <div style={styles.container} className="page-enter">
-        {/* Back */}
         <button style={styles.back} onClick={() => step === 1 ? navigate('/dashboard') : setStep(1)}>
           ← Back
         </button>
 
-        {/* Progress */}
         <div style={styles.progress}>
           <StepDot num={1} label="Department" active={step === 1} done={step > 1} />
           <div style={styles.progressLine} />
@@ -95,22 +93,17 @@ export default function CaseSetupPage() {
                   key={c.name}
                   style={{
                     ...styles.charCard,
-                    ...(character === c.name
-                      ? { ...styles.charCardActive, borderColor: c.color }
-                      : {}),
+                    ...(character === c.name ? { ...styles.charCardActive, borderColor: c.color } : {}),
                   }}
                   onClick={() => setCharacter(c.name)}
                 >
-                  {/* SVG avatar with coloured background circle */}
-                  <div style={{ ...styles.charAvatarWrap, background: c.color + '18' }}>
-                    <img
-                      src={c.svg}
-                      alt={c.name}
-                      style={styles.charAvatar}
-                      draggable={false}
-                    />
-                  </div>
-
+                  <div style={{
+                    ...styles.charAvatarWrap,
+                    backgroundColor: c.color + '15',
+                    backgroundImage: `url(${c.svg})`,
+                    backgroundSize: c.bgSize || '75%',
+                    backgroundPosition: c.bgPosition || 'center top',
+                  }} />
                   <div style={styles.charName}>{c.name}</div>
                   <div style={styles.charType}>{c.type}</div>
                   <div style={{ ...styles.charAge, background: c.color + '18', color: c.color }}>
@@ -173,32 +166,39 @@ function Spinner() {
 
 const styles = {
   page:           { minHeight: '100vh', background: 'var(--bg-main)', padding: '32px 24px' },
-  container:      { maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 28 },
+  container:      { maxWidth: 900, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 20 },
   back:           { border: 'none', background: 'transparent', color: 'var(--text-mid)', fontSize: 14, cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-head)', alignSelf: 'flex-start', padding: 0 },
   progress:       { display: 'flex', alignItems: 'center', gap: 12 },
   progressLine:   { flex: 1, height: 2, background: 'var(--border)', borderRadius: 99, maxWidth: 100 },
   stepTitle:      { fontFamily: 'var(--font-head)', fontSize: 26, fontWeight: 800, color: 'var(--text-dark)' },
-  stepSub:        { color: 'var(--text-mid)', fontSize: 15, marginTop: 6, marginBottom: 24 },
+  stepSub:        { color: 'var(--text-mid)', fontSize: 15, marginTop: 6, marginBottom: 16 },
 
-  // Department grid — unchanged
   deptGrid:       { display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 14 },
   deptCard:       { background: '#fff', border: '2px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '18px 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, cursor: 'pointer', transition: 'var(--transition)' },
   deptCardActive: { borderColor: 'var(--purple-primary)', background: 'var(--purple-ultra)', boxShadow: 'var(--shadow-md)' },
   deptIcon:       { fontSize: 28 },
   deptName:       { fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-head)', color: 'var(--text-dark)', textAlign: 'center', lineHeight: 1.3 },
 
-  // Character grid
-  charGrid:       { display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16, marginBottom: 28 },
-  charCard:       { background: '#fff', border: '2px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '22px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, cursor: 'pointer', transition: 'var(--transition)' },
+  charGrid:       { display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, marginBottom: 20 },
+  charCard:       { background: '#fff', border: '2px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '0 0 12px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, cursor: 'pointer', transition: 'var(--transition)', overflow: 'hidden' },
   charCardActive: { boxShadow: 'var(--shadow-md)', transform: 'translateY(-2px)' },
 
-  // Avatar — replaces charEmoji
-  charAvatarWrap: { width: 72, height: 72, borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 6 },
-  charAvatar:     { width: '100%', height: '100%', objectFit: 'contain', display: 'block' },
+  // Use background-image approach via inline style on the div instead of <img>
+  // so we can use background-size: cover and background-position: center top
+  charAvatarWrap: {
+    width: '100%',
+    height: 130,
+    flexShrink: 0,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center top',
+  },
+  // img is hidden — we use backgroundImage on the wrapper instead
+  charAvatar: { display: 'none' },
 
-  charName:       { fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 14, color: 'var(--text-dark)', textAlign: 'center' },
-  charType:       { fontSize: 12, color: 'var(--text-light)', textAlign: 'center', lineHeight: 1.4 },
-  charAge:        { padding: '2px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, fontFamily: 'var(--font-head)' },
+  charName:       { fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 13, color: 'var(--text-dark)', textAlign: 'center', paddingTop: 0 },
+  charType:       { fontSize: 11, color: 'var(--text-light)', textAlign: 'center', lineHeight: 1.3, padding: '0 10px' },
+  charAge:        { padding: '2px 8px', borderRadius: 99, fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-head)' },
 
   startRow:       { display: 'flex', justifyContent: 'center' },
   errorBox:       { background: 'var(--red-pale)', border: '1px solid #FFCDD2', borderRadius: 'var(--radius-md)', padding: '10px 14px', color: 'var(--red)', fontSize: 14, marginBottom: 16, fontWeight: 500 },

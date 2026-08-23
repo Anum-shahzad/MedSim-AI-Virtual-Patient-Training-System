@@ -10,6 +10,16 @@ const NAV_ITEMS = [
   { icon:'⚙️', label:'Settings',  path:'/settings' },
 ];
 
+const CTA_AVATARS = [
+  { src:'/Casesetupcharacters/Saba.svg',      top:0,  left:0,   delay:0.0 },
+  { src:'/Casesetupcharacters/Hamza.svg',     top:0,  left:44,  delay:0.4 },
+  { src:'/Casesetupcharacters/Fatima.svg',    top:0,  left:88,  delay:0.8 },
+  { src:'/Casesetupcharacters/Anas.svg',      top:0,  left:132, delay:1.2 },
+  { src:'/Casesetupcharacters/Erum.svg',      top:38, left:22,  delay:0.2, size:'115%' },
+  { src:'/Casesetupcharacters/Shahreyar.svg', top:38, left:66,  delay:0.6, size:'100%' },
+  { src:'/Casesetupcharacters/Anum.svg',      top:38, left:110, delay:1.0 },
+];
+
 export default function DashboardPage() {
   const { student, logout } = useAuth();
   const navigate = useNavigate();
@@ -87,9 +97,40 @@ export default function DashboardPage() {
             </button>
           </div>
           <div style={styles.ctaRight}>
+            <style>{`
+              @keyframes ctaBubbleFloat {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-6px); }
+              }
+              .cta-avatar {
+                animation-name: ctaBubbleFloat;
+                animation-duration: 3.2s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+                cursor: pointer;
+              }
+              .cta-avatar:hover {
+                animation-play-state: paused;
+                transform: translateY(-8px) scale(1.12) !important;
+                box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+                z-index: 5;
+              }
+            `}</style>
             <div style={styles.ctaCharacters}>
-              {['😰','🧑','👴','👧','🧓','👦','🙋'].map((e,i) => (
-                <div key={i} style={{...styles.ctaAvatar, transform:`rotate(${(i-3)*8}deg) translateY(${Math.abs(i-3)*4}px)`}}>{e}</div>
+              {CTA_AVATARS.map((a,i) => (
+                <div
+                  key={i}
+                  className="cta-avatar"
+                  style={{
+                    ...styles.ctaAvatar,
+                    top: a.top,
+                    left: a.left,
+                    backgroundImage: `url(${a.src})`,
+                    backgroundSize: a.size || styles.ctaAvatar.backgroundSize,
+                    animationDelay: `${a.delay}s`,
+                  }}
+                />
               ))}
             </div>
           </div>
@@ -177,15 +218,15 @@ const styles = {
   statIcon:  { width:40, height:40, borderRadius:10, display:'flex', alignItems:'center', justifyContent:'center', fontSize:20 },
   statValue: { fontFamily:'var(--font-head)', fontSize:26, fontWeight:800, color:'var(--text-dark)' },
   statLabel: { fontSize:13, color:'var(--text-light)', fontWeight:500 },
-  ctaCard:   { background:'linear-gradient(130deg,#7B5CFA 0%,#6C63FF 100%)', borderRadius:'var(--radius-xl)', padding:'32px 36px', display:'flex', justifyContent:'space-between', alignItems:'center', overflow:'visible', position:'relative', flexShrink:0 },
+  ctaCard:   { background:'linear-gradient(130deg,#7B5CFA 0%,#6C63FF 100%)', borderRadius:'var(--radius-xl)', padding:'32px 36px', display:'flex', justifyContent:'space-between', alignItems:'center', overflow:'hidden', position:'relative', flexShrink:0 },
   ctaLeft:   { color:'#fff', maxWidth:380 },
   ctaBadge:  { display:'inline-block', background:'rgba(255,255,255,0.2)', borderRadius:99, padding:'3px 12px', fontSize:12, fontWeight:700, fontFamily:'var(--font-head)', marginBottom:10, backdropFilter:'blur(8px)' },
   ctaTitle:  { fontFamily:'var(--font-head)', fontSize:28, fontWeight:900, lineHeight:1.2 },
   ctaDesc:   { opacity:0.85, fontSize:14, marginTop:8, lineHeight:1.6 },
   ctaBtn:    { marginTop:20, background:'#fff', color:'var(--purple-primary)', boxShadow:'0 4px 20px rgba(0,0,0,0.15)' },
-  ctaRight:  { position:'relative', width:180, height:80 },
-  ctaCharacters: { display:'flex', justifyContent:'center' },
-  ctaAvatar: { width:52, height:52, background:'rgba(255,255,255,0.25)', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', fontSize:26, backdropFilter:'blur(8px)', marginLeft:-8 },
+  ctaRight:  { position:'relative', width:200, height:100, flexShrink:0 },
+  ctaCharacters: { position:'relative', width:'100%', height:'100%' },
+  ctaAvatar: { position:'absolute', width:52, height:52, background:'rgba(255,255,255,0.25)', borderRadius:'50%', border:'2px solid rgba(255,255,255,0.5)', backgroundSize:'150%', backgroundPosition:'center top', backgroundRepeat:'no-repeat', boxShadow:'0 4px 10px rgba(0,0,0,0.12)' },
   section:   { display:'flex', flexDirection:'column', gap:12 },
   sectionHeader: { display:'flex', justifyContent:'space-between', alignItems:'center' },
   sectionTitle:  { fontFamily:'var(--font-head)', fontSize:18, fontWeight:800, color:'var(--text-dark)' },
