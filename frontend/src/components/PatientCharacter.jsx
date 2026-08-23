@@ -93,6 +93,60 @@ const CHARACTER_CONFIG = {
     activeHands:   ['Hand_Right','Hand_Left','Arm_Right_Lower','Arm_Right_Upper','Arm_Left_Upper','Arm_Left_Lower'],
     allHandLayers: ['Hand_Right','Hand_Left','Arm_Right_Lower','Arm_Right_Upper','Arm_Left_Upper','Arm_Left_Lower'],
   },
+
+  'Fatima_Begum': {
+    file: '/characters/Fatima Begum.svg',
+    expressions: {
+      neutral: { eyes: ['Eye_Right_White','Eye_Right_Iris','Eye_Right_Pupil','Eye_Left_White','Eye_Left_Iris','Eye_Left_Pupil'], eyebrows: ['Eyebrows_Right','Eyebrows_Left'], nose: 'Wrenkles', mouth: 'Mouth' },
+      smile:   { eyes: ['Eye_Right_White','Eye_Right_Iris','Eye_Right_Pupil','Eye_Left_White','Eye_Left_Iris','Eye_Left_Pupil'], eyebrows: ['Eyebrows_Right','Eyebrows_Left'], nose: 'Wrenkles', mouth: 'Mouth_Smile' },
+    },
+    defaultExpression: 'neutral',
+    blinkLayers:  ['Eye_Right_White','Eye_Left_White'],
+    allEyeLayers: ['Eye_Right_White','Eye_Right_Iris','Eye_Right_Pupil','Eye_Left_White','Eye_Left_Iris','Eye_Left_Pupil'],
+    allEyebrowLayers: ['Eyebrows_Right','Eyebrows_Left'],
+    allNoseLayers:  ['Wrenkles'],
+    allMouthLayers: ['Mouth','Mouth_straight_closed','Mouth_Closed','Mouth_Open_A','Mouth_Open_E','Mouth_Open_O','Mouth_M','Mouth_Smile'],
+    talkingMouths:  ['Mouth_Open_A','Mouth_Open_E','Mouth_Open_O','Mouth_M','Mouth_Closed','Mouth_Open_A'],
+    restingHands:  ['Hand_Left','Hand_Right','Arm_Left','Arm_Right'],
+    activeHands:   ['Hand_Left','Hand_Right','Arm_Left','Arm_Right'],
+    allHandLayers: ['Hand_Left','Hand_Right','Arm_Left','Arm_Right'],
+  },
+
+  'Erum': {
+    file: '/characters/Erum.svg',
+    expressions: {
+      scared: { eyes: ['Scared_Eye_Right','Scared_Eye_left','Scared_Eye_Right_White','Scared_Eye_Left_White','Scared_Eye_Right_Pupil','Scared_Eye_Left_Pupil'], eyebrows: ['Scared_Eyebrow_Right','Scared_Eyebrow_Left'], nose: 'Nose', mouth: 'Scared_Mouth' },
+      sad:    { eyes: ['Sad_Eye_Right','Sad_Eye_left','Scared_Eye_Right_White-2','Scared_Eye_Left_White-2','Sad_Eye_Right_Pupil','Sad_Eye_Left_Pupil'],          eyebrows: ['Scared_Eyebrow_Right','Scared_Eyebrow_Left'], nose: 'Nose', mouth: 'Mouth_Sad' },
+    },
+    defaultExpression: 'scared',
+    blinkLayers:  ['Scared_Eye_Right','Scared_Eye_left'],
+    allEyeLayers: ['Scared_Eye_Right','Scared_Eye_left','Scared_Eye_Right_White','Scared_Eye_Left_White','Scared_Eye_Right_Pupil','Scared_Eye_Left_Pupil','Sad_Eye_Right','Sad_Eye_left','Scared_Eye_Right_White-2','Scared_Eye_Left_White-2','Sad_Eye_Right_Pupil','Sad_Eye_Left_Pupil'],
+    allEyebrowLayers: ['Scared_Eyebrow_Right','Scared_Eyebrow_Left'],
+    allNoseLayers:  ['Nose'],
+    allMouthLayers: ['Scared_Mouth','Mouth_straight_closed','Mouth_Closed','Mouth_Smile','Mouth_M','Mouth_Open_O','Mouth_Open_E','Mouth_Open_A','Mouth_Sad'],
+    talkingMouths:  ['Mouth_Open_A','Mouth_Open_E','Mouth_Open_O','Mouth_M','Mouth_Closed','Mouth_Open_A'],
+    restingHands:  ['Hand_Right','Hand_Left','Arm_Right_Upper','Arm_Right_Lower','Arm_Left_Upper','Arm_Left_Lower'],
+    activeHands:   ['Hand_Right','Hand_Left','Arm_Right_Upper','Arm_Right_Lower','Arm_Left_Upper','Arm_Left_Lower'],
+    allHandLayers: ['Hand_Right','Hand_Left','Arm_Right_Upper','Arm_Right_Lower','Arm_Left_Upper','Arm_Left_Lower'],
+  },
+
+  'Shahreyar': {
+    file: '/characters/Shahreyar.svg',
+    expressions: {
+      neutral: { eyes: ['Eye_Right_White','Eye_Right_Iris','Eye_Right_Pupil','Eye_Left_White','Eye_Left_Iris','Eye_Left_Pupil'], eyebrows: ['Eyebrow_Right','Eyebrow_Left'], nose: 'Nose', mouth: 'mouth' },
+      smile:   { eyes: ['Eye_Right_White','Eye_Right_Iris','Eye_Right_Pupil','Eye_Left_White','Eye_Left_Iris','Eye_Left_Pupil'], eyebrows: ['Eyebrow_Right','Eyebrow_Left'], nose: 'Nose', mouth: 'Mouth_Smile' },
+    },
+    defaultExpression: 'neutral',
+    blinkLayers:  ['Eye_Right_White','Eye_Left_White'],
+    allEyeLayers: ['Eye_Right_White','Eye_Right_Iris','Eye_Right_Pupil','Eye_Left_White','Eye_Left_Iris','Eye_Left_Pupil'],
+    allEyebrowLayers: ['Eyebrow_Right','Eyebrow_Left'],
+    allNoseLayers:  ['Nose'],
+    allMouthLayers: ['mouth','Mouth_Smile','Mouth_M','Mouth_Open_O','Mouth_Open_E','Mouth_Open_A','Mouth_Closed','Mouth_straight_closed'],
+    talkingMouths:  ['Mouth_Open_A','Mouth_Open_E','Mouth_Open_O','Mouth_M','Mouth_Closed','Mouth_Open_A'],
+    restingHands:  ['Hand_Right','Hand_Left'],
+    activeHands:   ['Hand_Right','Hand_Left'],
+    allHandLayers: ['Hand_Right','Hand_Left'],
+  },
 };
 
 const CHAR_KEY_MAP = {
@@ -100,6 +154,9 @@ const CHAR_KEY_MAP = {
   'Anas':         'Anas',
   'Saba Parveen': 'Saba_Parveen',
   'Anum Shahzad': 'Anum_Shahzad',
+  'Fatima Begum':  'Fatima_Begum',
+  'Erum':         'Erum',
+  'Shahreyar':    'Shahreyar',
 };
 
 export default function PatientCharacter({ characterName, isTalking = false, expression = null }) {
@@ -288,7 +345,15 @@ export default function PatientCharacter({ characterName, isTalking = false, exp
 }
 
 function getFallbackEmoji(name) {
-  return {'Saba Parveen':'😰','Hamza Noor':'😐','Anas':'😏','Anum Shahzad':'🙂'}[name] || '🧑';
+  return {
+    'Saba Parveen': '😰',
+    'Hamza Noor':   '😐',
+    'Anas':         '😏',
+    'Anum Shahzad': '🙂',
+    'Fatima Begum':  '🧕',
+    'Erum':         '😟',
+    'Shahreyar':    '🧒',
+  }[name] || '🧑';
 }
 
 const styles = {
